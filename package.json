@@ -1,0 +1,27 @@
+{
+  "name": "running",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "echarts": "^3.6.2",
+    "echarts-wordcloud": "^1.1.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10"
+  },
+  "author": {
+    "name": "majing",
+    "email": "mjingm87@qq.com"
+  },
+  "keywords": [
+    "Running",
+    "跑步"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "homepage": "/running"
+}

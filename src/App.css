@@ -1,0 +1,40 @@
+.App {
+  height: inherit;
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header, .App-footer {
+  background-color: #222;
+  color: white;
+  flex: 0 0 1.3em;
+}
+.App-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.App-footer a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cloud {
+  /*width: inherit;
+  height: inherit;*/
+  flex: 1;
+}
