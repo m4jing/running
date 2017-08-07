@@ -34,8 +34,6 @@
 }
 
 .module {
-  /*width: inherit;
-  height: inherit;*/
   flex: 1;
   display: flex;
   align-items: center;

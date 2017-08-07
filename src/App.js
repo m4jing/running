@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 import _Cloud from './components/Cloud';
 
-// import logo from './logo.svg';
 import './App.css';
 
 const _Map = () => (
@@ -26,10 +25,6 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
-        {/* <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Run2Top</h2>
-        </div> */}
         <div className="App-header">跑向巅峰 - 曾经脚下的路</div>
         <ul>
           <li>
