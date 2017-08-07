@@ -33,8 +33,33 @@
   to { transform: rotate(360deg); }
 }
 
-.cloud {
+.module {
   /*width: inherit;
   height: inherit;*/
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #ddd;
+}
+ul li {
+  flex: 1;
+  /*display: flex;*/
+}
+li a {
+  /*flex: 1;*/
+  display: block;
+  color: #444;
+  text-decoration: none;
+}
+li a.active {
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
 }

@@ -25,6 +25,46 @@ export default class Cloud extends Component {
       height: 'auto'
     });
   }
+  getOption = (props) => ({
+    title: {
+      text: props.title
+    },
+    tooltip: {
+      show: true
+    },
+    series: [{
+      name: props.title,
+      type: 'wordCloud',
+      shape: 'circle',
+      sizeRange: [12, 60],
+      rotationRange: [-90, 90],
+      rotationStep: 15,
+      textPadding: 0,
+      // size: ['80%', '80%'],
+      width: '100%',
+      height: '100%',
+      autoSize: {
+        enable: true,
+        minSize: 14
+      },
+      textStyle: {
+        normal: {
+          color: () => {
+            return 'rgb(' + [
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160)
+            ].join(',') + ')'
+          }
+        },
+        emphasis: {
+          shadowBlur: 10,
+          shadowColor: '#333'
+        }
+      },
+      data: props.data
+    }]
+  })
   renderChart = (renderTo) => {
 
     let option = {
@@ -169,7 +209,7 @@ export default class Cloud extends Component {
   }
   render() {
     return (
-      <div ref="root" className="cloud"></div>
+      <div ref="root" className="module"></div>
     );
   }
 }
