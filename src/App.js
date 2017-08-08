@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
 
 import _Cloud from './components/Cloud';
 
 import './App.css';
+
+const history = createBrowserHistory();
 
 const _Map = () => (
   <div className="module">
@@ -20,10 +23,16 @@ const _Calculator = () => (
     <h1>Calculator</h1>
   </div>
 )
+const _NoMatch = () => (
+  <div className="module">
+    <h1>No Matches.</h1>
+    <p>What are you looking for?</p>
+  </div>
+)
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router history={history}>
       <div className="App">
         <div className="App-header">跑向巅峰 - 曾经脚下的路</div>
         <ul>
@@ -41,10 +50,13 @@ class App extends Component {
           </li>
         </ul>
 
-        <Route exact path='/' component={_Cloud} />
-        <Route path='/map' component={_Map} />
-        <Route path='/coach' component={_Coach} />
-        <Route path='/calculator' component={_Calculator} />
+        <Switch>
+          <Route exact path='/' component={_Cloud} />
+          <Route path='/map' component={_Map} />
+          <Route path='/coach' component={_Coach} />
+          <Route path='/calculator' component={_Calculator} />
+          <Route component={_NoMatch} />
+        </Switch>
 
         <div className="App-footer">
           <a href="http://www.weibo.com/m4jing" target="_blank" rel="noopener noreferrer">@m4jing</a>
