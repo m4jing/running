@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "echarts": "^3.6.2",
     "echarts-wordcloud": "^1.1.0",
     "history": "^4.6.3",
