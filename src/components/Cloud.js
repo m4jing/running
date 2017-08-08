@@ -11,7 +11,47 @@ import marathons from './marathons.json';
  * @param  {Array} arr Original array
  * @return {Array}     An array with unique elements from `arr`
  */
-const unique = (arr) => [...new Set(arr)];
+// const unique = (arr) => [...new Set(arr)];
+
+/**
+ * Get serie-format data(for ECharts) from an array `arr`.
+ *
+ * @param  {Array} arr Original array
+ * @return {Array}     An array containing data with serie-format from `arr`
+ *
+ * Example result: [{name: 'xxx', value: 1}]
+ */
+const getSerieData = (arr) => {
+  // counting elements
+  let counted = arr.reduce((acc, c) => {
+    if (c in acc) {
+      acc[c]++;
+    } else {
+      acc[c] = 1;
+    }
+    return acc;
+  }, {});
+
+  let result = [];
+  for (let i in counted) {
+    if (counted.hasOwnProperty(i)) {
+      result.push({
+        name: i,
+        value: counted[i]
+      })
+    }
+  }
+  return result;
+}
+
+const categoryMapping = {
+  minimarathon: '迷你马拉松',
+  halfmarathon: '半程马拉松',
+  marathon: '全程马拉松',
+  trail: '越野赛',
+  plank: '平板支撑',
+  finished: '完赛'
+}
 
 export default class Cloud extends Component {
   constructor(props) {
@@ -36,37 +76,72 @@ export default class Cloud extends Component {
     });
   }
   getOption = (dataSrc) => {
-    const marathonNames = dataSrc.map((marathon) => marathon.name);
-    const uniqueMarathonNames = unique(marathonNames);
+    // FullName
+    const gameFullNames = dataSrc.map((game) => game.fullName);
 
-    // common analysis
-    let serieData = uniqueMarathonNames.map((item) => {
-      let maras = dataSrc.filter((marathon) => marathon.name === item);
-      return {
-        name: maras[0].fullName,
-        value: maras.length
-      }
-    })
+    // common analysis (name)
+    // const gameNames = dataSrc.map((game) => game.name);
+    // const uniqueGameNames = unique(gameNames);
+    //
+    // let nameSerieData = uniqueGameNames.map((item) => {
+    //   let maras = dataSrc.filter((game) => game.name === item);
+    //   return {
+    //     name: maras[0].fullName,
+    //     value: maras.length
+    //   }
+    // })
 
     // Year
+    const gameYears = dataSrc.map((game) => game.datetime.slice(0, 4)+'年');
+
     // Country
+    const gameCountries = dataSrc.map((game) => game.location.country);
+
     // Province
+    const gameProvinces = dataSrc.map((game) => game.location.province);
+
+    // City
+    const gameCities = dataSrc.map((game) => game.location.city);
+
     // PB
+    const gamePBs = dataSrc
+      .filter((game) => game.tags.includes('PB'))
+      .map((i) => 'PB');
+
     // Full Marathon
     // Marathon
+    const gameCategories = dataSrc.map((game) => categoryMapping[game.type]);
+
     // Finished
+    const gameResults = dataSrc.map((game) => categoryMapping[game.result]);
+
+    let gameSerieRawData = [
+      gameFullNames,
+      gameYears,
+      gameCountries,
+      gameProvinces,
+      gameCities,
+      gamePBs,
+      gameCategories,
+      gameResults
+    ]
+
+    let gameSeries = gameSerieRawData
+      .map((gameSerie) => getSerieData(gameSerie))
+      .reduce((acc, c) => acc.concat(c), []);
+
     return {
       title: {
-        text: '参加过的次数'
+        text: '完成过的次数'
       },
       tooltip: {
         show: true
       },
       series: [{
-        name: '参加过的次数',
+        name: '完成过的次数',
         type: 'wordCloud',
         shape: 'circle',
-        sizeRange: [12, 60],
+        sizeRange: [12, 36],
         rotationRange: [-90, 90],
         rotationStep: 15,
         textPadding: 0,
@@ -92,7 +167,7 @@ export default class Cloud extends Component {
             shadowColor: '#333'
           }
         },
-        data: serieData
+        data: gameSeries
       }]
     }
   }

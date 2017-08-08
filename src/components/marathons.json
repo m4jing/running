@@ -14,8 +14,11 @@
     ],
     "datetime": "2014-10-19 08:00",
     "timestamp": 1413676800000,
-    "country": "中国",
-    "province": "北京",
+    "location": {
+      "country": "中国",
+      "province": "北京",
+      "city": "北京"
+    },
     "url": "http://www.beijing-marathon.com/",
     "note": "28km处抽筋"
   },
@@ -33,8 +36,11 @@
     ],
     "datetime": "2014-11-23 08:00",
     "timestamp": 1416700800000,
-    "country": "中国",
-    "province": "广州",
+    "location": {
+      "country": "中国",
+      "province": "广东",
+      "city": "广州"
+    },
     "url": "http://www.guangzhou-marathon.com/",
     "note": "没有起点计时毯"
   },
@@ -50,8 +56,11 @@
     "tags": [],
     "datetime": "2015-01-03 08:00",
     "timestamp": 1420243200000,
-    "country": "中国",
-    "province": "厦门",
+    "location": {
+      "country": "中国",
+      "province": "福建",
+      "city": "厦门"
+    },
     "url": "http://www.xmim.org/",
     "note": ""
   },
@@ -67,8 +76,11 @@
     "tags": [],
     "datetime": "2015-09-20 07:30",
     "timestamp": 1442705400000,
-    "country": "中国",
-    "province": "北京",
+    "location": {
+      "country": "中国",
+      "province": "北京",
+      "city": "北京"
+    },
     "url": "http://www.beijing-marathon.com/",
     "note": ""
   },
@@ -84,8 +96,11 @@
     "tags": [],
     "datetime": "2015-11-29 08:30",
     "timestamp": 1448757000000,
-    "country": "中国",
-    "province": "南京",
+    "location": {
+      "country": "中国",
+      "province": "江苏",
+      "city": "南京"
+    },
     "url": "http://www.nj-marathon.org/",
     "note": ""
   },
@@ -104,8 +119,11 @@
     ],
     "datetime": "2016-01-02 08:00",
     "timestamp": 1451692800000,
-    "country": "中国",
-    "province": "厦门",
+    "location": {
+      "country": "中国",
+      "province": "福建",
+      "city": "厦门"
+    },
     "url": "http://www.xmim.org/en/",
     "note": "带 OneAPM 跑团成员跑马拉松（第一次比赛）"
   },
@@ -123,8 +141,11 @@
     ],
     "datetime": "2016-03-20 08:00",
     "timestamp": 0,
-    "country": "中国",
-    "province": "无锡",
+    "location": {
+      "country": "中国",
+      "province": "江苏",
+      "city": "无锡"
+    },
     "url": "http://wuximarathon.com/",
     "note": ""
   },
@@ -143,8 +164,11 @@
     ],
     "datetime": "2016-03-27 08:00",
     "timestamp": 1459036800000,
-    "country": "中国",
-    "province": "都江堰",
+    "location": {
+      "country": "中国",
+      "province": "四川",
+      "city": "都江堰"
+    },
     "url": "http://www.cd42195.com/",
     "note": "带 OneAPM 跑团成员跑马拉松（多人参赛）"
   },
@@ -160,8 +184,11 @@
     "tags": [],
     "datetime": "2016-05-22 08:00",
     "timestamp": 1463875200000,
-    "country": "中国",
-    "province": "大连",
+    "location": {
+      "country": "中国",
+      "province": "辽宁",
+      "city": "大连"
+    },
     "url": "http://www.dlmls.org/portal/",
     "note": "海边城市，真热"
   },
@@ -179,8 +206,11 @@
     ],
     "datetime": "2016-09-17 07：30",
     "timestamp": 1474068600000,
-    "country": "中国",
-    "province": "北京",
+    "location": {
+      "country": "中国",
+      "province": "北京",
+      "city": "北京"
+    },
     "url": "http://www.beijing-marathon.com/",
     "note": ""
   },
@@ -198,8 +228,11 @@
     ],
     "datetime": "2016-09-24 07:30",
     "timestamp": 1474673400000,
-    "country": "中国",
-    "province": "衡水",
+    "location": {
+      "country": "中国",
+      "province": "河北",
+      "city": "衡水"
+    },
     "url": "http://hengshuimalasong.com/",
     "note": "没有成绩：可能是芯片坏掉，过终点后没有收到芝华安方的成绩短信；之后联系组委会并配合提供分段成绩、赛道中照片等，然而并没有什么用，成绩依然没给加上"
   },
@@ -215,8 +248,11 @@
     "tags": [],
     "datetime": "2016-10-30 08:00",
     "timestamp": 1477785600000,
-    "country": "中国",
-    "province": "上海",
+    "location": {
+      "country": "中国",
+      "province": "上海",
+      "city": "上海"
+    },
     "url": "http://www.shang-ma.com/",
     "note": ""
   },
@@ -234,8 +270,11 @@
     ],
     "datetime": "2016-11-06 08:00",
     "timestamp": 1478390400000,
-    "country": "中国",
-    "province": "杭州",
+    "location": {
+      "country": "中国",
+      "province": "浙江",
+      "city": "杭州"
+    },
     "url": "http://www.hzim.org/",
     "note": ""
   },
@@ -254,8 +293,11 @@
     ],
     "datetime": "2017-01-02 08:00",
     "timestamp": 1483315200000,
-    "country": "中国",
-    "province": "厦门",
+    "location": {
+      "country": "中国",
+      "province": "福建",
+      "city": "厦门"
+    },
     "url": "http://www.xmim.org/",
     "note": "跑得不好，依然大PB；感谢 CPT 和体科所"
   },
@@ -271,8 +313,11 @@
     "tags": [],
     "datetime": "2017-05-14 08:00",
     "timestamp": 1494720000000,
-    "country": "中国",
-    "province": "秦皇岛",
+    "location": {
+      "country": "中国",
+      "province": "河北",
+      "city": "秦皇岛"
+    },
     "url": "http://www.qhdmarathon.com/",
     "note": "就一个字：热；好久不练，状态确实差"
   }
