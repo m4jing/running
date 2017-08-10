@@ -3,16 +3,12 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from 'react-router-do
 import createBrowserHistory from 'history/createBrowserHistory';
 
 import _Cloud from './components/Cloud';
+import _Map from './components/Map';
 
 import './App.css';
 
 const history = createBrowserHistory();
 
-const _Map = () => (
-  <div className="module">
-    <h1>Map</h1>
-  </div>
-)
 const _Coach = () => (
   <div className="module">
     <h1>I'm a coach.</h1>
@@ -34,7 +30,7 @@ class App extends Component {
     return (
       <Router history={history}>
       <div className="App">
-        <div className="App-header">跑向巅峰 - 曾经脚下的路</div>
+        <div className="App-header">跑向巅峰 · Keep Running</div>
         <ul>
           <li>
             <NavLink exact activeClassName='active' to='/'>Cloud</NavLink>
