@@ -132,7 +132,7 @@ export default class Cloud extends Component {
 
     return {
       title: {
-        text: '曾经脚下的路',
+        text: '一点一滴，多姿多彩',
         left: 'center',
         textStyle: {
           color: '#555',
