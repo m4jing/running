@@ -132,13 +132,18 @@ export default class Cloud extends Component {
 
     return {
       title: {
-        text: '完成过的次数'
+        text: '曾经脚下的路',
+        left: 'center',
+        textStyle: {
+          color: '#555',
+          fontSize: 12
+        }
       },
       tooltip: {
         show: true
       },
       series: [{
-        name: '完成过的次数',
+        name: 'Times Realized',
         type: 'wordCloud',
         shape: 'circle',
         sizeRange: [12, 36],
