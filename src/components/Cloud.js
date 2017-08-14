@@ -4,54 +4,7 @@ import 'echarts-wordcloud';
 import 'echarts/lib/component/tooltip';
 
 import marathons from './marathons.json';
-
-/**
- * Get unique elements from an array `arr`.
- *
- * @param  {Array} arr Original array
- * @return {Array}     An array with unique elements from `arr`
- */
-// const unique = (arr) => [...new Set(arr)];
-
-/**
- * Get serie-format data(for ECharts) from an array `arr`.
- *
- * @param  {Array} arr Original array
- * @return {Array}     An array containing data with serie-format from `arr`
- *
- * Example result: [{name: 'xxx', value: 1}]
- */
-const getSerieData = (arr) => {
-  // counting elements
-  let counted = arr.reduce((acc, c) => {
-    if (c in acc) {
-      acc[c]++;
-    } else {
-      acc[c] = 1;
-    }
-    return acc;
-  }, {});
-
-  let result = [];
-  for (let i in counted) {
-    if (counted.hasOwnProperty(i)) {
-      result.push({
-        name: i,
-        value: counted[i]
-      })
-    }
-  }
-  return result;
-}
-
-const categoryMapping = {
-  minimarathon: '迷你马拉松',
-  halfmarathon: '半程马拉松',
-  marathon: '全程马拉松',
-  trail: '越野赛',
-  plank: '平板支撑',
-  finished: '完赛'
-}
+import { getSerieData, categoryMapping } from '../utils';
 
 export default class Cloud extends Component {
   constructor(props) {
