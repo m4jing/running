@@ -57,7 +57,7 @@ li a {
   color: #444;
   text-decoration: none;
 }
-li a.active {
+li a:hover, li a.active {
   font-weight: bold;
   color: #fff;
   background-color: #222;
