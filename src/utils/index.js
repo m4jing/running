@@ -262,11 +262,25 @@ const geoCoordMap = {
   '大庆':[125.03,46.58]
 };
 
+const geoGameMapping = {
+  '北京':['北京马拉松'],
+  '广州':['广州马拉松'],
+  '厦门':['厦门国际马拉松'],
+  '南京':['南京国际马拉松'],
+  '无锡':['无锡国际马拉松'],
+  '都江堰':['成都双遗马拉松'],
+  '大连':['大连国际马拉松'],
+  '衡水':['衡水湖国际马拉松'],
+  '上海':['上海国际马拉松'],
+  '杭州':['杭州马拉松'],
+  '秦皇岛':['秦皇岛国际马拉松']
+}
 
 export {
   unique,
   getSerieData,
   categoryMapping,
   geoCoordMap,
-  convertData
+  convertData,
+  geoGameMapping
 };

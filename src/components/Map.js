@@ -9,7 +9,7 @@ import 'echarts/lib/component/tooltip';
 
 import 'echarts/map/js/china';
 
-import { getSerieData, convertData } from '../utils';
+import { getSerieData, convertData, geoGameMapping } from '../utils';
 
 import marathons from './marathons.json';
 
@@ -46,9 +46,11 @@ export default class Map extends Component {
       tooltip : {
         trigger: 'item',
         formatter: (params) => {
+          let games = geoGameMapping[params.name].join('<br />');
           return `
             ${params.seriesName}<br />
-            ${params.name}: ${params.value[2]}次
+            @${params.name}：一共 ${params.value[2]} 次<br />
+            ${games}
           `
         }
       },
@@ -105,7 +107,7 @@ export default class Map extends Component {
         //   }
         // },
         {
-          name: 'Traveled',
+          name: 'Times Traveled',
           type: 'effectScatter',
           coordinateSystem: 'geo',
           data: convertData(getSerieData(gameCities)),
